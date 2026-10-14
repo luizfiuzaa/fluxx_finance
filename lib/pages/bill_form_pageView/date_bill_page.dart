@@ -127,7 +127,7 @@ class _DateSelectorState extends State<DateSelector> {
           label,
           style: isSelected
               ? AppTheme.textStyles.subTileTextStyle
-                  .copyWith(color: AppTheme.colors.white)
+                  .copyWith(color: AppTheme.colors.onHintColor)
               : AppTheme.textStyles.subTileTextStyle,
         ),
       ),
@@ -245,7 +245,9 @@ class _CalendarWidgetState extends State<_CalendarWidget> {
                     child: Text(
                       "$dayNumber",
                       style: TextStyle(
-                        color: AppTheme.colors.white,
+                        color: isSelected
+                            ? AppTheme.colors.onHintColor
+                            : AppTheme.colors.primaryTextColor,
                       ),
                     ),
                   ),
@@ -267,7 +269,7 @@ class _CalendarWidgetState extends State<_CalendarWidget> {
           color: AppTheme.colors.appBackgroundColor,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Icon(icon, color: AppTheme.colors.white),
+        child: Icon(icon, color: AppTheme.colors.primaryTextColor),
       ),
     );
   }

@@ -81,7 +81,7 @@ class _InvoiceItemState extends State<InvoiceItem> {
                 ),
                 Icon(
                   Icons.arrow_forward_ios_rounded,
-                  color: AppTheme.colors.white,
+                  color: AppTheme.colors.primaryTextColor,
                   size: 15,
                 ),
               ],

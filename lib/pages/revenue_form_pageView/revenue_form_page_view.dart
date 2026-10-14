@@ -10,7 +10,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/helpers.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:get_it/get_it.dart';
@@ -96,7 +95,7 @@ class _RevenueFormPageviewState extends State<RevenueFormPageview> {
           }
         },
         child: AnnotatedRegion(
-          value: SystemUiOverlayStyle.dark,
+          value: AppTheme.overlayStyle,
           child: BlocBuilder<RevenueFormCubit, RevenueFormState>(
               bloc: GetIt.I(),
               buildWhen: (previous, current) =>
@@ -151,7 +150,7 @@ class _RevenueFormPageviewState extends State<RevenueFormPageview> {
                                     radius: 6,
                                     backgroundColor: index == _currentIndex
                                         ? AppTheme.colors.hintColor
-                                        : AppTheme.colors.white,
+                                        : AppTheme.colors.primaryTextColor,
                                   ),
                                 ),
                               ),
@@ -184,7 +183,8 @@ class _RevenueFormPageviewState extends State<RevenueFormPageview> {
                                 minimumSize: const Size(50, 50),
                               ),
                               child: Text('Desativar',
-                                  style: AppTheme.textStyles.bodyTextStyle),
+                                  style: AppTheme.textStyles.bodyTextStyle
+                                      .copyWith(color: AppTheme.colors.white)),
                             ),
                           ),
                         BlocBuilder<RevenueFormCubit, RevenueFormState>(

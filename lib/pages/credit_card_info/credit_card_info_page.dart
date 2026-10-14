@@ -8,7 +8,6 @@ import 'package:Fluxx/services/app_period_service.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 
 class CreditCardInfoPage extends StatefulWidget {
@@ -40,7 +39,7 @@ class _CreditCardInfoPageState extends State<CreditCardInfoPage> {
     return DefaultTabController(
       length: 2,
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.dark,
+        value: AppTheme.overlayStyle,
         child: Scaffold(
           backgroundColor: AppTheme.colors.appBackgroundColor,
           resizeToAvoidBottomInset: true,
@@ -54,8 +53,8 @@ class _CreditCardInfoPageState extends State<CreditCardInfoPage> {
                     Tab(text: 'Estatísticas do mês'),
                     Tab(text: 'Detalhes gerais'),
                   ],
-                  labelColor: AppTheme.colors.white,
-                  unselectedLabelColor: AppTheme.colors.white,
+                  labelColor: AppTheme.colors.primaryTextColor,
+                  unselectedLabelColor: AppTheme.colors.primaryTextColor,
                   indicatorColor: AppTheme.colors.hintColor,
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelStyle: AppTheme.textStyles.subTileTextStyle,

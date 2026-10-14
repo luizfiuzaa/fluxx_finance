@@ -21,7 +21,6 @@ import 'package:Fluxx/utils/helpers.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:get_it/get_it.dart';
@@ -138,7 +137,7 @@ class _BillFormPageviewState extends State<BillFormPageview> {
           }
         },
         child: AnnotatedRegion(
-          value: SystemUiOverlayStyle.dark,
+          value: AppTheme.overlayStyle,
           child: BlocBuilder<BillFormCubit, BillFormState>(
               bloc: GetIt.I(),
               buildWhen: (previous, current) =>
@@ -192,7 +191,7 @@ class _BillFormPageviewState extends State<BillFormPageview> {
                                     radius: 6,
                                     backgroundColor: index == _currentIndex
                                         ? AppTheme.colors.hintColor
-                                        : AppTheme.colors.white,
+                                        : AppTheme.colors.primaryTextColor,
                                   ),
                                 ),
                               ),

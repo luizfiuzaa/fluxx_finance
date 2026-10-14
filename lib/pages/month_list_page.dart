@@ -7,7 +7,6 @@ import 'package:Fluxx/models/month_model.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:intl/intl.dart';
@@ -52,7 +51,7 @@ class _MonthListPageState extends State<MonthListPage> {
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     return AnnotatedRegion(
-      value: SystemUiOverlayStyle.dark,
+      value: AppTheme.overlayStyle,
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: AppTheme.colors.appBackgroundColor,

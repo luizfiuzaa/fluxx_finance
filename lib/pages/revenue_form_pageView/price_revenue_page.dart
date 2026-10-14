@@ -63,7 +63,7 @@ class _PriceRevenuePageState extends State<PriceRevenuePage> {
          TextFormField(
          maxLines: 1,
          textAlignVertical: TextAlignVertical.top,
-         cursorColor: Colors.white,
+         cursorColor: AppTheme.colors.hintColor,
          controller: _moneyController,
          keyboardType: TextInputType.number,
          style: AppTheme.textStyles.titleTextStyle,

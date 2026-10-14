@@ -20,14 +20,14 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     return AnimSearchBar(
       animationDurationInMilli: 500,
       color: AppTheme.colors.hintColor,
-      searchIconColor: Colors.white,
-      textFieldIconColor: Colors.white,
+      searchIconColor: AppTheme.colors.onHintColor,
+      textFieldIconColor: AppTheme.colors.onHintColor,
       boxShadow: true,
       textFieldColor: AppTheme.colors.hintColor,
       closeSearchOnSuffixTap: true,
       autoFocus: true,
-      style: const TextStyle(
-        color: Colors.white,
+      style: TextStyle(
+        color: AppTheme.colors.onHintColor,
         fontSize: 20,
       ),
       width: MediaQuery.of(context).size.width * 0.75,

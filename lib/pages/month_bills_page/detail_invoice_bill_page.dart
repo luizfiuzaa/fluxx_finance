@@ -9,7 +9,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/helpers.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -50,7 +49,7 @@ class _DetailInvoiceBillPageState extends State<DetailInvoiceBillPage> {
         }
       },
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.light,
+        value: AppTheme.overlayStyle,
         child: PopScope(
           onPopInvokedWithResult: (didPop, result) =>
               !didPop ? Navigator.pop(context) : null,
@@ -124,7 +123,7 @@ class _DetailInvoiceBillPageContent extends StatelessWidget {
                           context: context, invoiceBill: state.bill),
                       icon: Icon(
                         Icons.mode_edit_rounded,
-                        color: AppTheme.colors.white,
+                        color: AppTheme.colors.onHintColor,
                       ),
                       style: IconButton.styleFrom(
                           minimumSize: const Size(55, 55),
@@ -135,7 +134,7 @@ class _DetailInvoiceBillPageContent extends StatelessWidget {
                       onPressed: () => _showDeleteDialog(context, state.bill!),
                       icon: Icon(
                         Icons.delete_forever_rounded,
-                        color: AppTheme.colors.white,
+                        color: AppTheme.colors.onHintColor,
                       ),
                       style: IconButton.styleFrom(
                           minimumSize: const Size(55, 55),
@@ -193,7 +192,7 @@ class _DetailInvoiceBillPageContent extends StatelessWidget {
               child: Text(
                 'Cancelar',
                 style: AppTheme.textStyles.secondaryTextStyle.copyWith(
-                  color: Colors.grey,
+                  color: AppTheme.colors.hintTextColor,
                 ),
               ),
             ),
@@ -214,7 +213,8 @@ class _DetailInvoiceBillPageContent extends StatelessWidget {
               ),
               child: Text(
                 'Excluir',
-                style: AppTheme.textStyles.bodyTextStyle,
+                style: AppTheme.textStyles.bodyTextStyle
+                    .copyWith(color: AppTheme.colors.white),
               ),
             ),
           ],

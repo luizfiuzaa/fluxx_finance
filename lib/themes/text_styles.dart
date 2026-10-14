@@ -37,7 +37,7 @@ class _DefaultTextStyles implements TextStylesInterface {
   TextStyle get itemTitleTextStyle => TextStyle(
       fontWeight: FontWeight.w700,
       fontSize: AppTheme.fontSizes.xlarge,
-      color: AppTheme.colors.black,
+      color: AppTheme.colors.primaryTextColor,
       overflow: TextOverflow.ellipsis,
       fontFamily: 'Mulish');
 
@@ -69,7 +69,7 @@ class _DefaultTextStyles implements TextStylesInterface {
   TextStyle get itemTextStyle => TextStyle(
         fontWeight: FontWeight.w800,
         fontSize: AppTheme.fontSizes.medium,
-        color:  Colors.black,
+        color: AppTheme.colors.primaryTextColor,
         overflow: TextOverflow.ellipsis,
         fontFamily: 'Mulish',
       );
@@ -85,7 +85,7 @@ class _DefaultTextStyles implements TextStylesInterface {
   TextStyle get descTextStyle => TextStyle(
         fontWeight: FontWeight.w700,
         fontSize: AppTheme.fontSizes.small,
-        color: AppTheme.colors.black,
+        color: AppTheme.colors.primaryTextColor,
         overflow: TextOverflow.ellipsis,
         fontFamily: 'Mulish',
       );

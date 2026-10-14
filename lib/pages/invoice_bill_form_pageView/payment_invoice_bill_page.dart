@@ -129,7 +129,7 @@ class _PaymentInvoiceBillPageState extends State<PaymentInvoiceBillPage> {
                                                     .secondaryTextStyle
                                                     .copyWith(
                                                   color: isSelected
-                                                      ? AppTheme.colors.white
+                                                      ? AppTheme.colors.onHintColor
                                                       : AppTheme
                                                           .colors.hintTextColor,
                                                 ),
@@ -149,7 +149,7 @@ class _PaymentInvoiceBillPageState extends State<PaymentInvoiceBillPage> {
                                                       .secondaryTextStyle
                                                       .copyWith(
                                                     color: isSelected
-                                                        ? AppTheme.colors.white
+                                                        ? AppTheme.colors.onHintColor
                                                         : AppTheme.colors
                                                             .hintTextColor,
                                                   ),

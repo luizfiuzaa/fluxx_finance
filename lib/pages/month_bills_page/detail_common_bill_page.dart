@@ -8,7 +8,6 @@ import 'package:Fluxx/utils/helpers.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -39,7 +38,7 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     return AnnotatedRegion(
-      value: SystemUiOverlayStyle.light,
+      value: AppTheme.overlayStyle,
       child: PopScope(
         onPopInvokedWithResult: (didPop, result) => _exit(didPop),
         child: Scaffold(
@@ -75,7 +74,7 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
                                   context: context, bill: state.detailBill),
                               icon: Icon(
                                 Icons.mode_edit_rounded,
-                                color: AppTheme.colors.white,
+                                color: AppTheme.colors.onHintColor,
                               ),
                               style: IconButton.styleFrom(
                                   minimumSize: const Size(55, 55),
@@ -86,7 +85,7 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
                                   _showDeleteDialog(context, state.detailBill!),
                               icon: Icon(
                                 Icons.delete_forever_rounded,
-                                color: AppTheme.colors.white,
+                                color: AppTheme.colors.onHintColor,
                               ),
                               style: IconButton.styleFrom(
                                   minimumSize: const Size(55, 55),
@@ -97,14 +96,14 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
                               first: false,
                               second: true,
                               spacing: 55.0,
-                              style: const ToggleStyle(
+                              style: ToggleStyle(
                                 borderColor: Colors.transparent,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black26,
+                                    color: AppTheme.colors.shadowColor,
                                     spreadRadius: 1,
                                     blurRadius: 2,
-                                    offset: Offset(0, 1.5),
+                                    offset: const Offset(0, 1.5),
                                   ),
                                 ],
                               ),
@@ -119,7 +118,7 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
                                   backgroundColor: b
                                       ? AppTheme.colors.hintColor
                                       : AppTheme.colors.lightHintColor,
-                                  indicatorColor: AppTheme.colors.white),
+                                  indicatorColor: AppTheme.colors.onHintColor),
                               iconBuilder: (value) => value
                                   ? const Icon(Icons.check_rounded)
                                   : const Icon(Icons.close_rounded),
@@ -225,7 +224,7 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
               child: Text(
                 'Cancelar',
                 style: AppTheme.textStyles.secondaryTextStyle.copyWith(
-                  color: Colors.grey,
+                  color: AppTheme.colors.hintTextColor,
                 ),
               ),
             ),
@@ -242,7 +241,8 @@ class _DetailCommonBillPageState extends State<DetailCommonBillPage> {
               ),
               child: Text(
                 'Excluir',
-                style: AppTheme.textStyles.bodyTextStyle,
+                style: AppTheme.textStyles.bodyTextStyle
+                    .copyWith(color: AppTheme.colors.white),
               ),
             ),
           ],

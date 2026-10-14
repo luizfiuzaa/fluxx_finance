@@ -92,7 +92,7 @@ class _IntroPageState extends State<IntroPage> {
               width: 150,
               color: AppTheme.colors.itemBackgroundColor,
               textStyle: AppTheme.textStyles.secondaryTextStyle
-                  .copyWith(color: AppTheme.colors.white),
+                  .copyWith(color: AppTheme.colors.primaryTextColor),
             ),
             if (!error)
               const CustomLoading(padding: EdgeInsets.zero),

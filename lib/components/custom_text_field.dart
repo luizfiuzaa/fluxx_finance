@@ -39,7 +39,7 @@ class CustomTextField extends StatelessWidget {
                   ? 1
                   : 6, // se não tiver icone significa que é uma caixa grande (ex.descrição)
               textAlignVertical: TextAlignVertical.top,
-              cursorColor: Colors.white,
+              cursorColor: AppTheme.colors.hintColor,
               inputFormatters: inputFormatters,
               controller: controller,
               keyboardType: keyboardType ?? TextInputType.text,

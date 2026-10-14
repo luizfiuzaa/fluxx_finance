@@ -184,7 +184,7 @@ class _RowItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         children: [
-          Icon(icon, size: 18, color: AppTheme.colors.white),
+          Icon(icon, size: 18, color: AppTheme.colors.primaryTextColor),
           const SizedBox(width: 8),
           Text(
             label,

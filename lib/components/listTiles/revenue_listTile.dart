@@ -33,7 +33,7 @@ class RevenueListTile extends StatelessWidget {
           subtitle,
           style: AppTheme.textStyles.secondaryTextStyle.copyWith(
             color: isSelected
-                ? AppTheme.colors.white
+                ? AppTheme.colors.onHintColor
                 : AppTheme.colors.hintTextColor,
           ),
           textAlign: TextAlign.center,
