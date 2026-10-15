@@ -4,7 +4,6 @@ import 'package:Fluxx/components/qr_scan_status_view.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
@@ -56,7 +55,7 @@ class _QrScanPageState extends State<QrScanPage> with WidgetsBindingObserver {
         final isScanning = state.status == QrScanStatus.initial ||
             state.status == QrScanStatus.scanning;
         return AnnotatedRegion(
-          value: SystemUiOverlayStyle.dark,
+          value: AppTheme.overlayStyle,
           child: Scaffold(
             backgroundColor: AppTheme.colors.appBackgroundColor,
             appBar: isScanning ? const CustomAppBar(title: 'Ler QR Code') : null,

@@ -2,6 +2,7 @@ import 'package:Fluxx/blocs/update_cubit/update_cubit.dart';
 import 'package:Fluxx/blocs/user_cubit/user_cubit.dart';
 import 'package:Fluxx/blocs/user_cubit/user_state.dart';
 import 'package:Fluxx/components/bottom_sheets/app_update_restart_bottomsheet.dart';
+import 'package:Fluxx/components/bottom_sheets/theme_bottomsheet.dart';
 import 'package:Fluxx/components/user_avatar.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/app_routes.dart';
@@ -84,11 +85,16 @@ class _HomeDrawerState extends State<HomeDrawer> {
               onTap: () =>
                   _navigate(() => goToRevenuesListPage(context: context)),
             ),
+            _DrawerItem(
+              title: 'Tema',
+              icon: Icons.contrast_rounded,
+              onTap: () => _navigate(() => showThemeBottomsheet(context)),
+            ),
             const Spacer(),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               height: 1,
-              color: AppTheme.colors.hintTextColor,
+              color: AppTheme.colors.borderColor,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -131,9 +137,9 @@ class _Header extends StatelessWidget {
         child: Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-          decoration: const BoxDecoration(
-            color: Color(0xFF0B2A4A),
-            borderRadius: BorderRadius.only(
+          decoration: BoxDecoration(
+            color: AppTheme.colors.accentSurfaceColor,
+            borderRadius: const BorderRadius.only(
               bottomRight: Radius.circular(30),
               bottomLeft: Radius.circular(30),
             ),
@@ -248,7 +254,7 @@ class _DrawerItem extends StatelessWidget {
               width: 60,
               height: 60,
               decoration: BoxDecoration(
-                color: const Color(0xFF0B2A4A),
+                color: AppTheme.colors.accentSurfaceColor,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(icon, color: AppTheme.colors.primaryTextColor),

@@ -1,4 +1,5 @@
 
+import 'package:Fluxx/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -27,8 +28,8 @@ class PrimaryButton extends StatelessWidget {
           padding: const EdgeInsets.all(3),
           width: width,
           child: isLoading
-              ? const CircularProgressIndicator(
-                  color: Colors.white,
+              ? CircularProgressIndicator(
+                  color: AppTheme.colors.onHintColor,
                 )
               : Text(
                   text,

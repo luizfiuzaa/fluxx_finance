@@ -25,13 +25,13 @@ class AddBillCta extends StatelessWidget {
               width: 56,
               height: 56,
               decoration: BoxDecoration(
-                color: AppTheme.colors.white.withAlpha(50),
+                color: AppTheme.colors.onHintColor.withAlpha(50),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
                 Icons.add_rounded,
                 size: 32,
-                color: AppTheme.colors.white,
+                color: AppTheme.colors.onHintColor,
               ),
             ),
             const SizedBox(width: 16),
@@ -42,13 +42,13 @@ class AddBillCta extends StatelessWidget {
                   Text(
                     'Adicionar Conta',
                     style: AppTheme.textStyles.bodyTextStyle
-                        .copyWith(color: AppTheme.colors.white),
+                        .copyWith(color: AppTheme.colors.onHintColor),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     'Manual, Qr code ou foto da nota fiscal',
                     style: AppTheme.textStyles.secondaryTextStyle.copyWith(
-                      color: AppTheme.colors.white.withAlpha(200),
+                      color: AppTheme.colors.onHintColor.withAlpha(200),
                     ),
                     softWrap: true,
                     overflow: TextOverflow.visible,

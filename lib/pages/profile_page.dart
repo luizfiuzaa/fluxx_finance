@@ -7,7 +7,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:Fluxx/utils/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -81,7 +80,7 @@ class _ProfilePageState extends State<ProfilePage> {
     var screenPadding =
         EdgeInsets.symmetric(horizontal: mediaQuery.width * .04);
     return AnnotatedRegion(
-      value: SystemUiOverlayStyle.dark,
+      value: AppTheme.overlayStyle,
       child: Scaffold(
         extendBody: true,
         resizeToAvoidBottomInset: true,

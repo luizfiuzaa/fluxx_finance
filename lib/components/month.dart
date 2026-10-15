@@ -30,8 +30,12 @@ class Month extends StatelessWidget {
         height: mediaQuery.height * .2,
         decoration: BoxDecoration(
           color: AppTheme.colors.itemBackgroundColor,
-          boxShadow: const [
-            BoxShadow(color: Colors.black, blurRadius: 1, offset: Offset(3, 3))
+          boxShadow: [
+            BoxShadow(
+              color: AppTheme.colors.shadowColor,
+              blurRadius: 1,
+              offset: const Offset(3, 3),
+            )
           ],
           border: Border(
             left: BorderSide(

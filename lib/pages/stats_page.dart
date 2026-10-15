@@ -11,7 +11,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:Fluxx/utils/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -56,7 +55,7 @@ class _StatsPageState extends State<StatsPage> {
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     return AnnotatedRegion(
-      value: SystemUiOverlayStyle.dark,
+      value: AppTheme.overlayStyle,
       child: Scaffold(
         backgroundColor: AppTheme.colors.appBackgroundColor,
         resizeToAvoidBottomInset: true,
@@ -171,7 +170,7 @@ class _StatsPageState extends State<StatsPage> {
                           bottom: mediaQuery.width * .01,
                         ),
                         height: 1,
-                        color: Colors.white,
+                        color: AppTheme.colors.borderColor,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -198,7 +197,7 @@ class _StatsPageState extends State<StatsPage> {
                           bottom: mediaQuery.width * .01,
                         ),
                         height: 1,
-                        color: Colors.white,
+                        color: AppTheme.colors.borderColor,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),

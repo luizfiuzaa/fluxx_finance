@@ -7,7 +7,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/helpers.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -34,7 +33,7 @@ class _CreditCardStatsPageState extends State<CreditCardStatsPage> {
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     return AnnotatedRegion(
-      value: SystemUiOverlayStyle.light,
+      value: AppTheme.overlayStyle,
       child: PopScope(
         onPopInvokedWithResult: (didPop, result) {
           if (!didPop) Navigator.pop(context);
@@ -115,7 +114,7 @@ class _StatsPageContentState extends State<_StatsPageContent> {
                           ),
                           Icon(
                             Icons.info_outline_rounded,
-                            color: AppTheme.colors.white,
+                            color: AppTheme.colors.primaryTextColor,
                           ),
                         ],
                       ),
@@ -245,7 +244,7 @@ class _StatsPageContentState extends State<_StatsPageContent> {
                           ),
                           Icon(
                             Icons.arrow_forward_ios_rounded,
-                            color: AppTheme.colors.white,
+                            color: AppTheme.colors.primaryTextColor,
                             size: 15,
                           ),
                         ],
@@ -293,7 +292,7 @@ class _StatsPageContentState extends State<_StatsPageContent> {
                           ),
                           Icon(
                             Icons.info_outline_rounded,
-                            color: AppTheme.colors.white,
+                            color: AppTheme.colors.primaryTextColor,
                           ),
                         ],
                       ),

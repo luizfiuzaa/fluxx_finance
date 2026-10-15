@@ -65,7 +65,7 @@ class _PriceBillPageState extends State<PriceInvoiceBillPage> {
         TextFormField(
           maxLines: 1,
           textAlignVertical: TextAlignVertical.top,
-          cursorColor: Colors.white,
+          cursorColor: AppTheme.colors.hintColor,
           controller: _moneyController,
           keyboardType: TextInputType.number,
           style: AppTheme.textStyles.titleTextStyle,

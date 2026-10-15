@@ -9,7 +9,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -45,7 +44,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
         }
       },
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.dark,
+        value: AppTheme.overlayStyle,
         child: Scaffold(
           backgroundColor: AppTheme.colors.appBackgroundColor,
           resizeToAvoidBottomInset: true,

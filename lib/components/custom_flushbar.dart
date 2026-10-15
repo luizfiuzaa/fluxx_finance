@@ -13,24 +13,24 @@ abstract class CustomFlushbar {
     return FlashyFlushbar(
       leadingWidget: Icon(
         isError ? Icons.warning_rounded : Icons.check_rounded,
-        color: AppTheme.colors.white,
+        color: AppTheme.colors.onHintColor,
         size: 24,
       ),
       borderRadius: BorderRadiusGeometry.circular(5),
       message: message,
       messageStyle: AppTheme.textStyles.secondaryTextStyle.copyWith(
-        color: AppTheme.colors.white,
+        color: AppTheme.colors.onHintColor,
         overflow: TextOverflow.visible,
       ),
       comingFromTop: true,
       margin: const EdgeInsets.all(24),
       duration: Duration(seconds: durationSeconds.toInt()),
-      backgroundColor: isError ? Colors.red : AppTheme.colors.hintColor,
+      backgroundColor: isError ? AppTheme.colors.red : AppTheme.colors.hintColor,
       messageHorizontalSpacing: 20,
       trailingWidget: IconButton(
         icon: Icon(
           Icons.close,
-          color: isError ? AppTheme.colors.white : AppTheme.colors.hintColor,
+          color: isError ? AppTheme.colors.onHintColor : AppTheme.colors.hintColor,
           size: 24,
         ),
         onPressed: () {

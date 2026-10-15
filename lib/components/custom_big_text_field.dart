@@ -33,7 +33,7 @@ class CustomBigTextField extends StatelessWidget {
         maxLines: maxLines,
         textAlignVertical: TextAlignVertical.top,
         
-        cursorColor: Colors.white,
+        cursorColor: AppTheme.colors.hintColor,
         inputFormatters: inputFormatters,
         controller: controller,
         keyboardType: keyboardType ?? TextInputType.text,

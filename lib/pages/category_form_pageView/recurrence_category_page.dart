@@ -51,17 +51,17 @@ class _RecurrenceRevenuePageState extends State<RecurrenceRevenuePage> {
                     customTextBuilder: (context, local, global) => Text(
                       local.value ? 'Mensal' : 'Única',
                       style: AppTheme.textStyles.subTileTextStyle
-                          .copyWith(color: AppTheme.colors.white),
+                          .copyWith(color: AppTheme.colors.onHintColor),
                     ),
                     spacing: 80,
-                    style: const ToggleStyle(
+                    style: ToggleStyle(
                       borderColor: Colors.transparent,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black26,
+                          color: AppTheme.colors.shadowColor,
                           spreadRadius: 1,
                           blurRadius: 2,
-                          offset: Offset(0, 1.5),
+                          offset: const Offset(0, 1.5),
                         ),
                       ],
                     ),
@@ -75,7 +75,7 @@ class _RecurrenceRevenuePageState extends State<RecurrenceRevenuePage> {
                         backgroundColor: b
                             ? AppTheme.colors.hintColor
                             : AppTheme.colors.lightHintColor,
-                        indicatorColor: AppTheme.colors.white),
+                        indicatorColor: AppTheme.colors.onHintColor),
                     iconBuilder: (value) => value
                         ? const Icon(Icons.lock_open_rounded)
                         : const Icon(Icons.lock_rounded),

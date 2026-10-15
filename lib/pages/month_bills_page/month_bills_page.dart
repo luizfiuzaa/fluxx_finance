@@ -14,7 +14,6 @@ import 'package:Fluxx/services/app_period_service.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -52,7 +51,7 @@ class _MonthBillsPageState extends State<MonthBillsPage> {
       length: 2,
       child: _ListenerWrapper(
         child: AnnotatedRegion(
-          value: SystemUiOverlayStyle.dark,
+          value: AppTheme.overlayStyle,
           child: Scaffold(
             backgroundColor: AppTheme.colors.appBackgroundColor,
             resizeToAvoidBottomInset: true,
@@ -66,8 +65,8 @@ class _MonthBillsPageState extends State<MonthBillsPage> {
                     Tab(text: 'Faturas'),
                     Tab(text: 'Contas comuns'),
                   ],
-                  labelColor: AppTheme.colors.white,
-                  unselectedLabelColor: AppTheme.colors.white,
+                  labelColor: AppTheme.colors.primaryTextColor,
+                  unselectedLabelColor: AppTheme.colors.primaryTextColor,
                   indicatorColor: AppTheme.colors.hintColor,
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelStyle: AppTheme.textStyles.subTileTextStyle,

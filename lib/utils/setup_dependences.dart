@@ -14,6 +14,7 @@ import 'package:Fluxx/blocs/invoices_cubits/invoice_payment_cubit.dart';
 import 'package:Fluxx/blocs/invoices_cubits/invoices_list_cubit.dart';
 import 'package:Fluxx/blocs/months_list_bloc/months__list_cubit.dart';
 import 'package:Fluxx/blocs/qr_scan_cubit/qr_scan_cubit.dart';
+import 'package:Fluxx/blocs/theme_cubit/theme_cubit.dart';
 import 'package:Fluxx/blocs/resume_cubit/resume_cubit.dart';
 import 'package:Fluxx/blocs/revenue_cubit/revenue_cubit.dart';
 import 'package:Fluxx/blocs/revenue_form_cubit/revenue_form_cubit.dart';
@@ -44,4 +45,5 @@ void setupDependencies() {
   getIt.registerLazySingleton<CategoryCubit>(() => CategoryCubit());
   getIt.registerLazySingleton<QrScanCubit>(() => QrScanCubit());
   getIt.registerLazySingleton<UpdateCubit>(() => UpdateCubit());
+  getIt.registerLazySingleton<ThemeCubit>(() => ThemeCubit());
 }

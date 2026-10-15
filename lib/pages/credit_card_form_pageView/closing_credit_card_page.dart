@@ -197,7 +197,9 @@ class _CalendarWidgetState extends State<_CalendarWidget> {
                     child: Text(
                       "$dayNumber",
                       style: TextStyle(
-                        color: AppTheme.colors.white,
+                        color: isSelected
+                            ? AppTheme.colors.onHintColor
+                            : AppTheme.colors.primaryTextColor,
                       ),
                     ),
                   ),

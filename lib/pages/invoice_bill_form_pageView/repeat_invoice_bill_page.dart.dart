@@ -50,17 +50,17 @@ class _RepeatInvoiceBillPageState extends State<RepeatInvoiceBillPage> {
                     customTextBuilder: (context, local, global) => Text(
                       local.value ? 'Parcelado' : 'A vista',
                       style: AppTheme.textStyles.subTileTextStyle
-                          .copyWith(color: AppTheme.colors.white),
+                          .copyWith(color: AppTheme.colors.onHintColor),
                     ),
                     spacing: 80,
-                    style: const ToggleStyle(
+                    style: ToggleStyle(
                       borderColor: Colors.transparent,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black26,
+                          color: AppTheme.colors.shadowColor,
                           spreadRadius: 1,
                           blurRadius: 2,
-                          offset: Offset(0, 1.5),
+                          offset: const Offset(0, 1.5),
                         ),
                       ],
                     ),
@@ -72,7 +72,7 @@ class _RepeatInvoiceBillPageState extends State<RepeatInvoiceBillPage> {
                         backgroundColor: b
                             ? AppTheme.colors.hintColor
                             : AppTheme.colors.lightHintColor,
-                        indicatorColor: AppTheme.colors.white),
+                        indicatorColor: AppTheme.colors.onHintColor),
                     iconBuilder: (value) => value
                         ? const Icon(Icons.loop_rounded)
                         : const Icon(Icons.one_x_mobiledata),
@@ -167,14 +167,14 @@ class _RepeatBillHandleState extends State<_RepeatBillHandle> {
                         ),
                         icon: Icon(
                           Icons.remove_rounded,
-                          color: AppTheme.colors.white,
+                          color: AppTheme.colors.onHintColor,
                         ),
                       ),
                     ),
                     Text(
                       'X${state.repeatCount}',
                       style: AppTheme.textStyles.subTileTextStyle
-                          .copyWith(color: AppTheme.colors.white),
+                          .copyWith(color: AppTheme.colors.primaryTextColor),
                     ),
                     Container(
                       height: double.infinity,
@@ -193,7 +193,7 @@ class _RepeatBillHandleState extends State<_RepeatBillHandle> {
                         ),
                         icon: Icon(
                           Icons.add_rounded,
-                          color: AppTheme.colors.white,
+                          color: AppTheme.colors.onHintColor,
                         ),
                       ),
                     ),

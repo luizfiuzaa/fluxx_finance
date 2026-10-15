@@ -9,7 +9,6 @@ import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/helpers.dart';
 import 'package:Fluxx/utils/navigations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -55,7 +54,7 @@ class _CreditCardDetailPageState extends State<CreditCardDetailPage> {
         }
       },
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.light,
+        value: AppTheme.overlayStyle,
         child: PopScope(
           onPopInvokedWithResult: (didPop, result) => _exit(didPop),
           child: SafeArea(
@@ -101,7 +100,7 @@ class _CreditCardDetailPageState extends State<CreditCardDetailPage> {
                                           creditCard: state.card),
                                       icon: Icon(
                                         Icons.mode_edit_rounded,
-                                        color: AppTheme.colors.white,
+                                        color: AppTheme.colors.onHintColor,
                                       ),
                                       style: IconButton.styleFrom(
                                           minimumSize: const Size(55, 55),
@@ -114,7 +113,7 @@ class _CreditCardDetailPageState extends State<CreditCardDetailPage> {
                                           context, state.card?.id ?? ''),
                                       icon: Icon(
                                         Icons.delete_forever_rounded,
-                                        color: AppTheme.colors.white,
+                                        color: AppTheme.colors.onHintColor,
                                       ),
                                       style: IconButton.styleFrom(
                                           minimumSize: const Size(55, 55),
@@ -196,7 +195,7 @@ class _CreditCardDetailPageState extends State<CreditCardDetailPage> {
               child: Text(
                 'Cancelar',
                 style: AppTheme.textStyles.secondaryTextStyle.copyWith(
-                  color: Colors.grey,
+                  color: AppTheme.colors.hintTextColor,
                 ),
               ),
             ),
@@ -213,7 +212,8 @@ class _CreditCardDetailPageState extends State<CreditCardDetailPage> {
               ),
               child: Text(
                 'Excluir',
-                style: AppTheme.textStyles.bodyTextStyle,
+                style: AppTheme.textStyles.bodyTextStyle
+                    .copyWith(color: AppTheme.colors.white),
               ),
             ),
           ],

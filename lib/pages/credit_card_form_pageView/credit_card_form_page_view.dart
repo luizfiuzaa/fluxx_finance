@@ -105,7 +105,7 @@ class _CreditCardFormPageviewState extends State<CreditCardFormPageview> {
           }
         },
         child: AnnotatedRegion(
-          value: SystemUiOverlayStyle.dark,
+          value: AppTheme.overlayStyle,
           child: BlocBuilder<CreditCardFormCubit, CreditCardFormState>(
               bloc: GetIt.I(),
               buildWhen: (previous, current) =>
@@ -159,7 +159,7 @@ class _CreditCardFormPageviewState extends State<CreditCardFormPageview> {
                                     radius: 6,
                                     backgroundColor: index == _currentIndex
                                         ? AppTheme.colors.hintColor
-                                        : AppTheme.colors.white,
+                                        : AppTheme.colors.primaryTextColor,
                                   ),
                                 ),
                               ),

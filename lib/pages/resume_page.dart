@@ -15,7 +15,6 @@ import 'package:Fluxx/services/app_period_service.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -87,7 +86,7 @@ class _ResumePageState extends State<ResumePage> {
         if (_canShowSheet()) showAppUpdateRestartBottomsheet(context);
       },
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.dark,
+        value: AppTheme.overlayStyle,
         child: Scaffold(
           key: _scaffoldKey,
           drawer: const HomeDrawer(),

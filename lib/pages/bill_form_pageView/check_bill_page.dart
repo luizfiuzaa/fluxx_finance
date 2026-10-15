@@ -213,7 +213,7 @@ class _DataItemState extends State<_DataItem>
                       size: 20,
                       color: Color.lerp(
                         AppTheme.colors.hintColor,
-                        AppTheme.colors.white,
+                        AppTheme.colors.onHintColor,
                         blink,
                       ),
                     ),
