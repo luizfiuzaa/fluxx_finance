@@ -32,6 +32,12 @@ set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_CXX_FLAGS_RELEASE}")
 # Use Unicode for all projects.
 add_definitions(-DUNICODE -D_UNICODE)
 
+# permission_handler_windows still includes <experimental/coroutine>, which the
+# MSVC 14.51 toolchain turns into a hard error (STL1011). Silencing it here is
+# the only way to build the plugin until it moves to the C++20 <coroutine>
+# header. Applies to the plugin targets added further down this file.
+add_definitions(-D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS)
+
 # Compilation settings that should be applied to most targets.
 #
 # Be cautious about adding new options here, as plugins use this function by

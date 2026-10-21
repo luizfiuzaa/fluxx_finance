@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:in_app_update/in_app_update.dart';
@@ -16,13 +15,18 @@ class AppUpdateService {
   // flutter run --dart-define=SIMULATE_UPDATE=true
   static const _simulateFlag = bool.fromEnvironment('SIMULATE_UPDATE');
   static const bool _simulate = kDebugMode && _simulateFlag;
+
+  // defaultTargetPlatform no navegador devolve o sistema do visitante, por
+  // isso o kIsWeb: a atualização in-app é da Play Store, não do browser.
+  static bool get _isAndroid =>
+      !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
   final StreamController<InstallStatus> _simulatedStatus =
       StreamController<InstallStatus>.broadcast();
 
   /// Consulta a Play Store. Lança exceção se a checagem falhar (sem internet, build fora da Play, etc).
   Future<AppUpdateAvailability> checkForUpdate() async {
     if (_simulate) return AppUpdateAvailability.available;
-    if (!Platform.isAndroid) return AppUpdateAvailability.none;
+    if (!_isAndroid) return AppUpdateAvailability.none;
 
     final info = await InAppUpdate.checkForUpdate();
 

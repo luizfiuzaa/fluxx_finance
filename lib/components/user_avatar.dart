@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:Fluxx/components/user_picture.dart';
 import 'package:Fluxx/themes/app_theme.dart';
 import 'package:Fluxx/utils/constants.dart';
 import 'package:Fluxx/utils/helpers.dart';
@@ -33,11 +32,7 @@ class UserAvatar extends StatelessWidget {
       ),
       child: ClipOval(
         child: _hasPicture
-            ? Image.file(
-                File(picture!),
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => _initials(),
-              )
+            ? userPicture(path: picture!, fallback: _initials())
             : _initials(),
       ),
     );

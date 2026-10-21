@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:Fluxx/models/nota_fiscal_data.dart';
+import 'package:Fluxx/services/sefaz/network_error.dart';
 import 'package:Fluxx/services/sefaz/nfce_qr_code.dart';
 import 'package:Fluxx/services/sefaz/sefaz_exceptions.dart';
 import 'package:Fluxx/services/sefaz/sefaz_parser.dart';
@@ -34,10 +34,13 @@ class SefazParserSP implements SefazParser {
       return parseHtml(response.body, qrCode);
     } on TimeoutException {
       throw const SefazTimeoutException();
-    } on IOException {
-      throw const SefazFalhaRedeException();
     } on http.ClientException {
       throw const SefazFalhaRedeException();
+    } catch (e) {
+      if (isLowLevelNetworkError(e)) {
+        throw const SefazFalhaRedeException();
+      }
+      rethrow;
     } finally {
       if (_client == null) client.close();
     }
